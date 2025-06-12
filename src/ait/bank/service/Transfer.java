@@ -23,7 +23,7 @@ public class Transfer implements Runnable {
     public void run() {
         ReentrantLock accFromLock = accFrom.getLock();
         ReentrantLock accToLock = accTo.getLock();
-        // Check and set locks order
+       //  Check and set locks order
         if (accFrom.hashCode() < accTo.hashCode()) {
             accFromLock.lock();
             accToLock.lock();
@@ -55,5 +55,7 @@ public class Transfer implements Runnable {
 //                }
 //            }
 //        }
+
+
     }
 }
